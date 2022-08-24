@@ -60,7 +60,8 @@
         <dynamic-line />
       </el-col>
       <el-col :span="12">
-        wwwww
+        <div class="title pt-20 mb-20">七、一半虚线一半实线的折线</div>
+        <half-dash-half-solid />
       </el-col>
     </el-row>
   </div>
@@ -77,6 +78,7 @@ import noStack from './subComponent/no-stack'
 import lineArea from './subComponent/line-area'
 import dynamicLine from './subComponent/dynamic-line'
 import axisPointer from './subComponent/axis-pointer'
+import halfDashHalfSolid from './subComponent/half-dash-half-solid'
 
 export default {
   name: 'LineCorridor',
@@ -90,7 +92,8 @@ export default {
     noStack,
     lineArea,
     dynamicLine,
-    axisPointer
+    axisPointer,
+    halfDashHalfSolid
   },
   data() {
     return {

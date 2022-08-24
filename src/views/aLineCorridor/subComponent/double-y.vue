@@ -45,8 +45,7 @@ export default {
       // 图例点击 更新y轴刻度
       this.chart.on('legendselectchanged', (params) => {
         this.handleUpdateOption(params.selected)
-      });
-      
+      })
     },
     handleUpdateOption(selectedObj) {
       /** data1 有变化 === 为了拉大双Y轴刻度线====*/
@@ -55,25 +54,25 @@ export default {
       const data3 = [150, 232, 201, 154, 190, 330, 410]
 
       const legendDataArr = ['邮件营销', '联盟广告', '视频广告']
-      let new_stack = {},optionParams;
-      let initSelectObj = {};
+      const new_stack = {}; let optionParams
+      const initSelectObj = {}
       legendDataArr.forEach(item => {
         initSelectObj[item] = true
       })
-      let savesSelectObj = selectedObj? selectedObj: initSelectObj
-      Object.keys(savesSelectObj).forEach(key =>{
-        if(savesSelectObj[key]) {
-          switch(key) {
+      const savesSelectObj = selectedObj || initSelectObj
+      Object.keys(savesSelectObj).forEach(key => {
+        if (savesSelectObj[key]) {
+          switch (key) {
             case '联盟广告':
               new_stack['data2'] = data2
-              break;
+              break
             case '视频广告':
               new_stack['data3'] = data3
-              break;
+              break
           }
         }
       })
-      
+
       /** 有'stack'时 */
       const multi_data = this.sumMultiArr(new_stack)
       /** series配置无'stack'时，即后一项不累加前一项*/
@@ -83,19 +82,19 @@ export default {
       const intv0 = (y_max0 - 0) / SPLIT_NUMBER
       const intv1 = (y_max1 - 0) / SPLIT_NUMBER
 
-      if(selectedObj) {
+      if (selectedObj) {
         optionParams = {
           yAxis: [{
             name: '邮件营销',
             max: y_max0,
-            interval: intv0,
-          },{
+            interval: intv0
+          }, {
             name: '广告',
             max: y_max1,
-            interval: intv1,
+            interval: intv1
           }]
         }
-      }else {
+      } else {
         optionParams = {
           tooltip: {
             /** 'axis'-有类目的图使用(折线图，柱图)，'item'-无类目图（散点图，饼图等）*/

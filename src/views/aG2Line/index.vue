@@ -29,7 +29,7 @@ import g2DoubleY from './subComponent/g2-double-y'
 export default {
   components: {
     g2Line,
-    g2DoubleY,
+    g2DoubleY
     // g2DoubleYMulti
   },
   data() {

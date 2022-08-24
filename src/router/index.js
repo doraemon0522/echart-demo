@@ -143,7 +143,7 @@ export const constantRoutes = [
         meta: { title: 'g2柱图', icon: 'theme', affix: true }
       }
     ]
-  },
+  }
   // {
   //   path: '/guide',
   //   component: Layout,
